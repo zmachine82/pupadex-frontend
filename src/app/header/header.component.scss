@@ -1,12 +1,17 @@
 .fluid-container {
     
-    background-color: orangered;
+    background-color: rgba(255, 81, 0, 0.993);
     width: 100%;
     h1 {
-        text-align: center;
+        text-align: left;
         color: blue;
         margin: 0;
         height: 50%;
-
+    }
+    img{
+        float: right;
+        height: 50px;
+        width: 3%;
     }
 }
+
