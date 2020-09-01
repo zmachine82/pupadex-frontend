@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pupadex-frontend"
+    }
+  },
+  "defaultProject": "pupadex-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

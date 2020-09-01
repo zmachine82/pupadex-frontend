@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'pupadex-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pupadex-frontend');
+    expect(app).toEqual('pupadex-frontend');
   });
 
   it('should render title', () => {

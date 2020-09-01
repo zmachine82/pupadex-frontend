@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pupadex-frontend';
 }
+
+
+// modules
+// components
+// services
+
+
+// configuration files
+// routing
