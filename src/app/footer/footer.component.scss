@@ -1,0 +1,14 @@
+@import './../../variables.scss';
+.footer {
+    color: #ffffff;
+    font-family: 'lato';
+    font-weight: 300;
+    font-size: 30px;
+    background: $pokedex-red;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    display: flex;
+    min-height: 1vh;
+    flex-direction: column;
+    //box-shadow: 
+}
