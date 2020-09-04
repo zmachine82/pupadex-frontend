@@ -1,0 +1,31 @@
+.user-container{ 
+    margin: 100vh;  
+    
+    .my-form{
+        display:block
+    }
+
+    .beginning-text{
+        position: relative;;
+        display: inline;
+        padding-left:20px;
+        color:white;
+    }
+
+    li{
+        position: relative;
+        list-style-type : none;
+        list-style-position: outside;
+        color:white;
+    }
+    
+    label{
+        position: relative;
+        display:block;
+    }
+    
+}
+
+
+
+
