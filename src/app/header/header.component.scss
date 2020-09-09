@@ -1,31 +1,19 @@
 @import './../../variables.scss';
 .fluid-container {
     
-    background-color: $pokedex-red;
+    background-color:rgba(0, 68, 255, 0.932) ;
     width: 100%;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
+    height: auto;
     h1 {
-        text-align: center;
-        color: white;
-        margin: 1;
-        height: 50%;
-        margin-left: 25px;
-        
-        
-
+        text-align: left;
+        color:whitesmoke;
+        margin: 0;
+        height: 55%;
     }
-    
+    img{
+        float: left;
+        height: 48px;
+        width: 3%;
+    }
 }
 
-.genericlogo {
-    height: 25px;
-    width: 25px;
-    margin-right: 25px;
-}
-
-.top-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
