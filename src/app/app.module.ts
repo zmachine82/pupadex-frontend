@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
-import { UserComponent } from './user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -16,8 +16,7 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PuppylistComponent,
-    UserComponent
+    PuppylistComponent
   ],
   imports: [
     BrowserModule,
