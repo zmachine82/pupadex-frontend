@@ -34,7 +34,41 @@ export class PuppylistComponent implements OnInit {
     breed: "Blue Heeler",
     age: 7,
     image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
+  },
+  { 
+    name: "Denise",
+    breed: "Blue Heeler",
+    age: 7,
+    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
+  },
+  { 
+    name: "Denise",
+    breed: "Blue Heeler",
+    age: 7,
+    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
+  },
+  { 
+    name: "Denise",
+    breed: "Blue Heeler",
+    age: 7,
+    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
+  },
+
+  { 
+    name: "Denise",
+    breed: "Blue Heeler",
+    age: 7,
+    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
+  },
+
+  { 
+    name: "Denise",
+    breed: "Blue Heeler",
+    age: 7,
+    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
   }
+
+
 
   ]
   constructor() { }
