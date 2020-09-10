@@ -1,3 +1,4 @@
+import { PuppyService } from './../puppy.service';
 import { Component, OnInit } from '@angular/core';
 import { Puppy } from '../models/puppy';
 
@@ -8,72 +9,13 @@ import { Puppy } from '../models/puppy';
 })
 export class PuppylistComponent implements OnInit {
 
-  puppies: Puppy[] = [{
-    name: "Walter",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-  
-  { 
-    name: "Greg",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-
-  { 
-    name: "Bruce",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-  
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  },
-
-  { 
-    name: "Denise",
-    breed: "Blue Heeler",
-    age: 7,
-    image: "https://cf.ltkcdn.net/dogs/images/orig/236062-1600x1060-blue-heeler-puppies.jpg"
-  }
-
-
-
-  ]
-  constructor() { }
+  puppies: Puppy[] = [ ]
+  constructor(private puppyService: PuppyService) { }
 
   ngOnInit(): void {
+    this.puppyService.getAllPuppies().subscribe(data => {
+      this.puppies = data;
+    })
   }
 
 }
