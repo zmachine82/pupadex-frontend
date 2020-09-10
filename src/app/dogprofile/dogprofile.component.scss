@@ -1,0 +1,29 @@
+@import './../../variables.scss';
+
+.profileheader {
+    background-color: $pokedex-red; 
+    border: solid 4px black;
+    border-bottom: solid 2px black;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    margin: 32px;
+    margin-bottom: 0px;
+    padding: 16px;
+    height: 100px;
+}
+.profilecontainer {
+    background-color: white; 
+    border: solid 4px black;
+    border-top: solid 2px black;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 32px;
+    margin-top: 0px;
+    padding: 16px;
+}
+.dogprofilepic{
+    height: 25%;
+    width: 25%;
+    margin: auto;
+    display: block;
+}

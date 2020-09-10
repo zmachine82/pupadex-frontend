@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
+import { DogprofileComponent } from './dogprofile/dogprofile.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PuppylistComponent } from './puppylist/puppylist.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PuppylistComponent
+    PuppylistComponent,
+    DogprofileComponent,
   ],
   imports: [
     BrowserModule,
