@@ -1,8 +1,10 @@
-    <div class="card-columns">
-        <div class="card" *ngFor="let puppy of puppies">
-            <div class="card-body">
-                <h5 class="card-title">{{puppy.name}}</h5>
-            </div>
-        <img [src]="puppy.image" alt="Card image cap">
+<div class="row p-4">
+  <div class="col-lg-4 col-md-6 col-sm-12 p-2" *ngFor="let puppy of puppies">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{puppy.name}}</h3>
+      </div>
+      <img class="card-img-bottom" [src]="puppy.image" alt="Card image cap">
     </div>
+  </div>
 </div>
