@@ -11,12 +11,13 @@
       column-count: 3;
     }
   }
+    
     .card {
         display: inline-block;
         background: $pokedex-blue;
         font-family: 'helvetica, sans-serif';
         background-size:cover;
-        
+        border-radius: 50px;
     
         .card-title{
             font-family: 'helvetica, sans-serif';
