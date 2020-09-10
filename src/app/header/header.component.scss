@@ -1,12 +1,31 @@
+@import './../../variables.scss';
 .fluid-container {
     
-    background-color: orangered;
+    background-color: $pokedex-red;
     width: 100%;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     h1 {
         text-align: center;
-        color: blue;
-        margin: 0;
+        color: white;
+        margin: 1;
         height: 50%;
+        margin-left: 25px;
+        
+        
 
     }
+    
+}
+
+.genericlogo {
+    height: 25px;
+    width: 25px;
+    margin-right: 25px;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
