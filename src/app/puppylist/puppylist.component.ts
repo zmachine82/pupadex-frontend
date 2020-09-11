@@ -1,6 +1,7 @@
 import { PuppyService } from './../puppy.service';
 import { Component, OnInit } from '@angular/core';
 import { Puppy } from '../models/puppy';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-puppylist',
@@ -10,12 +11,16 @@ import { Puppy } from '../models/puppy';
 export class PuppylistComponent implements OnInit {
 
   puppies: Puppy[] = [ ]
-  constructor(private puppyService: PuppyService) { }
+  constructor(private puppyService: PuppyService, private router: Router) { }
 
   ngOnInit(): void {
     this.puppyService.getAllPuppies().subscribe(data => {
       this.puppies = data.puppies;
     })
+  }
+
+  profile(puppy: Puppy) {
+    this.router.navigate(['dogprofile', puppy.id])
   }
 
 }

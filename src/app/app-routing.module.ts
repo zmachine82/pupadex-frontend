@@ -7,7 +7,7 @@ import { PuppylistComponent } from './puppylist/puppylist.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'dogprofile', component: DogprofileComponent},
+  {path: 'dogprofile/:id', component: DogprofileComponent},
   {path: 'puppies', component: PuppylistComponent}
 ];
 
