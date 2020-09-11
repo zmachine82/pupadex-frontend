@@ -14,7 +14,7 @@ export class PuppylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.puppyService.getAllPuppies().subscribe(data => {
-      this.puppies = data;
+      this.puppies = data.puppies;
     })
   }
 

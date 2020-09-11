@@ -1,3 +1,4 @@
+import { PuppyData } from './models/puppy-data';
 import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -12,7 +13,7 @@ export class PuppyService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPuppies(): Observable<Puppy[]>{
-    return this.http.get<Puppy[]>(this.baseUrl + "puppies/index");
+  getAllPuppies(): Observable<PuppyData>{
+    return this.http.get<PuppyData>(this.baseUrl + "puppies/index");
   }
 }
