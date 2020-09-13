@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from '@angular/common';
+import { AddpuppyComponent } from './addpuppy/addpuppy.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     PuppylistComponent,
-    DogprofileComponent
+    DogprofileComponent,
+    AddpuppyComponent
   ],
   imports: [
     CommonModule,

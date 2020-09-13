@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PuppylistComponent } from './puppylist/puppylist.component';
-import { DogprofileComponent } from './dogprofile/dogprofile.component';
+import { AddpuppyComponent } from './addpuppy/addpuppy.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'puppies', pathMatch: 'full'},
   {path: 'dogprofile/:id', component: DogprofileComponent},
-  {path: 'puppies', component: PuppylistComponent}
+  {path: 'puppies', component: PuppylistComponent},
+  {path: 'addpuppy', component: AddpuppyComponent}
 ];
 
 
