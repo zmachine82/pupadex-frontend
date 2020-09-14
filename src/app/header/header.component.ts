@@ -12,8 +12,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  homeNav() {
+  puppiesNav() {
     this.router.navigate(['puppies'])
+  }
+
+  homeNav() {
+    this.router.navigate(['home'])
   }
   addPuppyNav() {
     this.router.navigate(['addpuppy'])
