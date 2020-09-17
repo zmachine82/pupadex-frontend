@@ -38,15 +38,4 @@ export class HeaderComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
-  puppiesNav() {
-    this.router.navigate(['puppies'])
-  }
-
-  homeNav() {
-    this.router.navigate(['home'])
-  }
-  addPuppyNav() {
-    this.router.navigate(['addpuppy'])
-  }
 }

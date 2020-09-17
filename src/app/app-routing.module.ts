@@ -12,12 +12,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'puppies', pathMatch: 'full'},
   {path: 'dogprofile/:id', component: DogprofileComponent},
   {path: 'puppies', component: PuppylistComponent},
-<<<<<<< HEAD
-  {path: 'addpuppy', component: AddpuppyComponent}
-=======
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'sign-in', component: SignInComponent}
->>>>>>> master
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'addpuppy', component: AddpuppyComponent}
 ];
 
 

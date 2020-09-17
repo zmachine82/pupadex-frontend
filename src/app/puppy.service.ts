@@ -9,6 +9,7 @@ import { Puppy } from './models/puppy';
   providedIn: 'root'
 })
 export class PuppyService {
+  
   baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -19,5 +20,9 @@ export class PuppyService {
 
   getAPuppy(id: number): Observable<any> {
     return this.http.get(this.baseUrl + "puppies/show?id=" + id);
+  }
+  
+  createPuppy(puppy: Puppy) {
+    return this.http.post(this.baseUrl + 'puppies/create', puppy);
   }
 }
