@@ -1,3 +1,5 @@
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { DogprofileComponent } from './dogprofile/DogprofileComponent';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,7 +12,12 @@ const routes: Routes = [
   {path: '', redirectTo: 'puppies', pathMatch: 'full'},
   {path: 'dogprofile/:id', component: DogprofileComponent},
   {path: 'puppies', component: PuppylistComponent},
+<<<<<<< HEAD
   {path: 'addpuppy', component: AddpuppyComponent}
+=======
+  {path: 'sign-up', component: SignUpComponent},
+  {path: 'sign-in', component: SignInComponent}
+>>>>>>> master
 ];
 
 
