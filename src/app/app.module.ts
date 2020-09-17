@@ -11,6 +11,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from '@angular/common';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     PuppylistComponent,
-    DogprofileComponent
+    DogprofileComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule
