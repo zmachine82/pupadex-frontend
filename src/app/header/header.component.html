@@ -1,7 +1,16 @@
 <div class="fluid-container">
-    <div class="top-container">
-        <h1>Pupadex</h1>
-        <!-- <img src=\src\assets\genericuser.png> -->
-        <img class="genericlogo" src="https://banner2.cleanpng.com/20180629/saw/kisspng-tennis-balls-computer-icons-russia-ball-5b366a40bf3205.4166799815302928007832.jpg" />
+  <div class="top-container">
+    <h1 [routerLink]="['/puppies']">Pupadex</h1>
+    <div class="profile">
+      <!-- <img *ngIf="signedIn" class="genericlogo" src="https://banner2.cleanpng.com/20180629/saw/kisspng-tennis-balls-computer-icons-russia-ball-5b366a40bf3205.4166799815302928007832.jpg" /> -->
+      <span *ngIf="signedIn">{{nickname}}</span>
+      <div class="links" *ngIf="!signedIn">
+        <span [routerLink]="['/sign-up']">Sign Up</span>
+        <span [routerLink]="['/sign-in']" >Sign In</span>
+      </div>
     </div>
+
+  </div>
+
+  
 </div>
