@@ -11,17 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
 import { AddpuppyComponent } from './addpuppy/addpuppy.component';
-=======
-<<<<<<< HEAD
->>>>>>> 69af8baa5d24b2ba542a984daf5c05785a47b0d7
-=======
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
->>>>>>> 094d943d3cd369713f2a519db285c60937a12444
->>>>>>> master
+
 
 @NgModule({
   declarations: [
@@ -30,22 +24,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
     HeaderComponent,
     FooterComponent,
     PuppylistComponent,
-<<<<<<< HEAD
-    DogprofileComponent,
-    AddpuppyComponent
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    DogprofileComponent,
-=======
-    DogprofileComponent
->>>>>>> 69af8baa5d24b2ba542a984daf5c05785a47b0d7
-=======
+    AddpuppyComponent,
     DogprofileComponent,
     SignUpComponent,
-    SignInComponent
->>>>>>> 094d943d3cd369713f2a519db285c60937a12444
->>>>>>> master
+    SignInComponent,
   ],
   imports: [
     CommonModule,

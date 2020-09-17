@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Router } from '@angular/router';
-=======
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
->>>>>>> master
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,15 +8,11 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class HeaderComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private router: Router) { }
-=======
   signedIn = false;
   nickname = '';
   closeResult = '';
 
   constructor(private modalService: NgbModal) { }
->>>>>>> master
 
   ngOnInit(): void {
     this.nickname = localStorage.getItem('nickname');
