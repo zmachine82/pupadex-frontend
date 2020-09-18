@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../local-storage.service';
 import { PuppyService } from './../puppy.service';
 import { Component, OnInit } from '@angular/core';
 import { Puppy } from '../models/puppy';
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class PuppylistComponent implements OnInit {
 
   puppies: Puppy[] = [ ]
-  constructor(private puppyService: PuppyService, private router: Router) { }
+  constructor(private puppyService: PuppyService, private router: Router, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
     this.puppyService.getAllPuppies().subscribe(data => {
@@ -21,6 +22,10 @@ export class PuppylistComponent implements OnInit {
 
   profile(puppy: Puppy) {
     this.router.navigate(['dogprofile', puppy.id])
+  }
+
+  loggedIn() {
+    return this.localStorageService.isLoggedIn();
   }
 
 }

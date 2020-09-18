@@ -1,7 +1,7 @@
+
 <div class="profileheader">
 
 </div>
-<<<<<<< HEAD
 <div class="profilecontainer">
     
     <img class="dogprofilepic" src="https://www.inquirer.com/resizer/fkVlQFhmcBV2DUjhywyD7rLUJOc=/1400x932/smart/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/AINEFWAOGBFCRLWZEHB64JKRE4.jpg" alt="Doggo">
@@ -9,16 +9,28 @@
     <p class= "center">Bulldog, 4</p>
     
     This is Jeremy. Jeremy is a Bulldog. His grandmother says he's very handsome. His hobbies include playing chess, writing poetry, and shredding the gnar down at the local skatepark. He's a gemini, and enjoys white wine and long walks on the beach.
-=======
+
+<div class="button-row" *ngIf="loggedIn()">
+    <button [routerLink]="'new-review'">Write Review</button>
+  </div>
 <div class="profilecontainer" *ngIf="puppy !== null">
     
     <img class="dogprofilepic" src="{{puppy.image}}" alt="Doggo">
     <h1 class="center">{{puppy.name}}</h1>
     <p class= "center">{{puppy.breed}}, {{puppy.age}}</p>
     
-    <p *ngIf="puppy.desc">
+    <!-- <p *ngIf="puppy.desc">
         {{puppy.desc}}
         <!-- This is Jeremy. Jeremy is a Bulldog. His grandmother says he's very handsome. His hobbies include playing chess, writing poetry, and shredding the gnar down at the local skatepark. He's a gemini, and enjoys white wine and long walks on the beach. -->
     </p>
->>>>>>> 69af8baa5d24b2ba542a984daf5c05785a47b0d7
+        This is Jeremy. Jeremy is a Bulldog. His grandmother says he's very handsome. His hobbies include playing chess, writing poetry, and shredding the gnar down at the local skatepark. He's a gemini, and enjoys white wine and long walks on the beach.
+    </p> -->
+
+    <div *ngIf="reviews.length > 0">
+        <h2 >Reviews</h2>
+        <div *ngFor="let review of reviews">
+            <h5>{{review.username}} says: </h5>
+            {{review.body}}
+        </div>
+    </div>
 </div>

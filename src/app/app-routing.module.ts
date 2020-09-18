@@ -1,3 +1,6 @@
+import { NewReviewComponent } from './new-review/new-review.component';
+import { AuthGuard } from './auth.guard';
+import { AddPuppyComponent } from './add-puppy/add-puppy.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DogprofileComponent } from './dogprofile/DogprofileComponent';
@@ -13,7 +16,9 @@ const routes: Routes = [
   {path: 'dogprofile/:id', component: DogprofileComponent},
   {path: 'puppies', component: PuppylistComponent},
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'sign-in', component: SignInComponent}
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'add-puppy', component: AddPuppyComponent, canActivate: [AuthGuard]},
+  {path: 'dogprofile/:id/new-review', component: NewReviewComponent, canActivate: [AuthGuard]}
 ];
 
 
