@@ -1,3 +1,5 @@
+import { Review } from './../models/review';
+import { LocalStorageService } from './../local-storage.service';
 import { PuppyService } from './../puppy.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +12,8 @@ import { Puppy } from '../models/puppy';
 })
 export class DogprofileComponent implements OnInit {
     puppy: Puppy = null;
-    constructor(private route: ActivatedRoute, private puppyService: PuppyService ) {
+    reviews: Review[] = [];
+    constructor(private route: ActivatedRoute, private puppyService: PuppyService, private localStorageService: LocalStorageService ) {
 
     }
 
@@ -20,8 +23,13 @@ export class DogprofileComponent implements OnInit {
                 this.puppyService.getAPuppy(params.id).subscribe(puppyData => {
                     console.log(puppyData);
                     this.puppy = puppyData.puppy
+                    this.reviews = puppyData.reviews
                 });
             }
         })
+    }
+
+    loggedIn() {
+        return this.localStorageService.isLoggedIn();
     }
 }
