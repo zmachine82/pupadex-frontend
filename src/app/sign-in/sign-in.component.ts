@@ -1,3 +1,5 @@
+import { User } from './../models/user';
+import { LocalStorageService } from './../local-storage.service';
 import { UserService } from './../user.service';
 import { NewUser } from './../models/new-user';
 import { Component, OnInit } from '@angular/core';
@@ -10,15 +12,15 @@ import { Component, OnInit } from '@angular/core';
 export class SignInComponent implements OnInit {
   user: NewUser = new NewUser();
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
     
   }
 
   signIn() {
-    this.userService.signIn(this.user).subscribe(data => {
-      console.log(data);
+    this.userService.signIn(this.user).subscribe((data: User) => {
+      this.localStorageService.saveUser(data);
     });
   }
 

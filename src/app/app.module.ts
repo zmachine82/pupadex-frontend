@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './auth.interceptor';
 import { DogprofileComponent } from './dogprofile/DogprofileComponent';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,13 +10,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
-import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from '@angular/common';
-import { AddpuppyComponent } from './addpuppy/addpuppy.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
-
+import { AddPuppyComponent } from './add-puppy/add-puppy.component';
+import { NewReviewComponent } from './new-review/new-review.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { SignInComponent } from './sign-in/sign-in.component';
     HeaderComponent,
     FooterComponent,
     PuppylistComponent,
-    AddpuppyComponent,
     DogprofileComponent,
     SignUpComponent,
     SignInComponent,
+    NewReviewComponent,
+    AddPuppyComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

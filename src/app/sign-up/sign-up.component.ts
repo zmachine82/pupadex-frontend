@@ -1,3 +1,5 @@
+import { LocalStorageService } from './../local-storage.service';
+import { User } from './../models/user';
 import { UserService } from './../user.service';
 import { NewUser } from './../models/new-user';
 import { Component, OnInit } from '@angular/core';
@@ -11,17 +13,14 @@ export class SignUpComponent implements OnInit {
 
   newUser: NewUser = new NewUser();
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
   }
 
   submitUser() {
-    this.userService.signup(this.newUser).subscribe((data: any) => {
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('firstName', data.first_name);
-      localStorage.setItem('nickname', data.nickname);
-
+    this.userService.signup(this.newUser).subscribe((data: User) => {
+      this.localStorageService.saveUser(data);
     });
   }
 
