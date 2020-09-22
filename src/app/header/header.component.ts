@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,13 +13,17 @@ export class HeaderComponent implements OnInit {
   nickname = '';
   closeResult = '';
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
-    this.nickname = localStorage.getItem('nickname');
-    if (this.nickname !== null && this.nickname !== undefined && this.nickname !== '') {
-      this.signedIn = true;
-    }
+    this.localStorageService.currentUser.subscribe(data => {
+      if(data) {
+        this.signedIn = true;
+        this.nickname = data.nickname;
+      } else {
+        this.signedIn = false;
+      }
+    });
   }
 
   open(content) {
@@ -27,6 +32,10 @@ export class HeaderComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  logout() {
+    this.localStorageService.logoutUser()
   }
 
   private getDismissReason(reason: any): string {

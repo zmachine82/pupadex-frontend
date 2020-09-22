@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AddPuppyComponent } from './add-puppy/add-puppy.component';
 import { NewReviewComponent } from './new-review/new-review.component';
-import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     DogprofileComponent,
     SignUpComponent,
     SignInComponent,
+    AddPuppyComponent,
     NewReviewComponent,
-    AddPuppyComponent
+    UserProfileComponent
   ],
   imports: [
     CommonModule,
