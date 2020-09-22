@@ -13,6 +13,7 @@ import { Puppy } from '../models/puppy';
 export class DogprofileComponent implements OnInit {
     puppy: Puppy = null;
     reviews: Review[] = [];
+    averageRating: number = null;
     constructor(private route: ActivatedRoute, private puppyService: PuppyService, private localStorageService: LocalStorageService ) {
 
     }
@@ -24,6 +25,7 @@ export class DogprofileComponent implements OnInit {
                     console.log(puppyData);
                     this.puppy = puppyData.puppy
                     this.reviews = puppyData.reviews
+                    this.averageRating = puppyData.averageRating
                 });
             }
         })

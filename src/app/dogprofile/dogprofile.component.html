@@ -13,10 +13,11 @@
     </p> -->
 
     <div *ngIf="reviews.length > 0">
-        <h2 >Reviews</h2>
+        <h2 >Reviews : <span *ngIf="averageRating">Average Rating {{averageRating}}</span></h2>
         <div *ngFor="let review of reviews">
             <h5>{{review.username}} says: </h5>
             {{review.body}}
+            <p *ngIf="review.rating">{{review.rating}} out of 5</p>
         </div>
     </div>
 </div>

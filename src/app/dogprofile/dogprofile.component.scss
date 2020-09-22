@@ -27,3 +27,14 @@
     margin: auto;
     display: block;
 }
+
+.button-row {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: flex-end;
+  
+    button {
+      margin-right: 16px;
+    }
+  }

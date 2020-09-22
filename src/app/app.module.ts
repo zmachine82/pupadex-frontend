@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AddPuppyComponent } from './add-puppy/add-puppy.component';
 import { NewReviewComponent } from './new-review/new-review.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NewReviewComponent } from './new-review/new-review.component';
     SignUpComponent,
     SignInComponent,
     AddPuppyComponent,
-    NewReviewComponent
+    NewReviewComponent,
+    UserProfileComponent
   ],
   imports: [
     CommonModule,
