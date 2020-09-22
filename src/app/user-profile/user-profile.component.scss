@@ -1,0 +1,15 @@
+.user-card {
+    
+}
+
+.user-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 101px);
+}
+
+.profile-pic {
+    max-width: 375px;
+    max-height: 375px;
+}

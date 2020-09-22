@@ -1,0 +1,39 @@
+<div class="container-fluid user-container" *ngIf="currentUser">
+  <div class="card user-card">
+    <img class="card-img-top profile-pic" [src]="currentUser.image" alt="Card image cap">
+    <div class="card-img-overlay" >
+
+      <ng-template #popContent>
+        <input [(ngModel)]="newProfilePicUrl">
+        <button (click)="p.close()">Cancel</button>
+        <button (click)="saveProfilePic(p)">Save</button>
+      </ng-template>
+      <ng-template #popTitle>New Profile Pic URL</ng-template>
+      <button type="button" class="btn btn-outline-secondary" #p="ngbPopover" [ngbPopover]="popContent"
+        [popoverTitle]="popTitle" [autoClose]="false">
+        Change Profile Image
+      </button>
+    </div>
+    <div class="card-body" style="z-index: 4;">
+      <h5 class="card-title">Welcome {{currentUser.nickname}}</h5>
+      <p>Email: {{currentUser.email}}</p>
+      <p>First Name: {{currentUser.first_name}}</p>
+      <p>Last Name: {{currentUser.last_name}}</p>
+      <p (click)="editingNickname = true">Nickname: {{currentUser.nickname}}</p>
+      <ng-template #nickNamePopover>
+        <input [(ngModel)]="newNickname">
+        <button (click)="t.close()">Cancel</button>
+        <button (click)="saveNickname(t)">Save</button>
+      </ng-template>
+      <ng-template #nicknameTitle>Change Nickname</ng-template>
+      <button type="button" class="btn btn-outline-secondary" #t="ngbPopover" [ngbPopover]="nickNamePopover"
+        [popoverTitle]="nicknameTitle" [autoClose]="false">
+        Change Nickname
+      </button>
+    </div> 
+
+  
+  </div>
+</div>
+
+
