@@ -19,7 +19,7 @@
       <p>Email: {{currentUser.email}}</p>
       <p>First Name: {{currentUser.first_name}}</p>
       <p>Last Name: {{currentUser.last_name}}</p>
-      <p (click)="editingNickname = true">Nickname: {{currentUser.nickname}}</p>
+      <p >Nickname: {{currentUser.nickname}}</p>
       <ng-template #nickNamePopover>
         <input [(ngModel)]="newNickname">
         <button (click)="t.close()">Cancel</button>
