@@ -18,6 +18,7 @@
             <h5>{{review.username}} says: </h5>
             {{review.body}}
             <p *ngIf="review.rating">{{review.rating}} out of 5</p>
+            <p>Review written at {{review.created_at | date}}</p>
         </div>
     </div>
 </div>

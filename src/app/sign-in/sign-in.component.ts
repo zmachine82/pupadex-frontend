@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { User } from './../models/user';
 import { LocalStorageService } from './../local-storage.service';
 import { UserService } from './../user.service';
@@ -11,21 +12,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  user: NewUser = new NewUser();
+  formGroup: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required)
+  });
 
-  constructor(private router: Router, private userService: UserService, private localStorageService: LocalStorageService) { }
+
+
+  signInError = false;
+
+  constructor(private router: Router, private userService: UserService, private localStorageService: LocalStorageService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
     
   }
 
   signIn() {
-    this.userService.signIn(this.user).subscribe((data: User) => {
+    const newUser = new NewUser(this.formGroup.value)
+    this.userService.signIn(newUser).subscribe((data: User) => {
       this.localStorageService.saveUser(data);
       if(data) {
         this.router.navigate(['puppies'])
-      }
-    });
+      } 
+    }, err => this.signInError = true);
   }
+  
 
 }

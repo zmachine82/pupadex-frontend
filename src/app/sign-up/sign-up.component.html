@@ -5,32 +5,35 @@
     <!-- <img src="https://i.kym-cdn.com/entries/icons/facebook/000/013/564/doge.jpg" class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">Sign Up</h5>
-      <form #form >
+      <form #form [formGroup]="formGroup">
         <div class="form-group">
           <label for="firstName">First Name</label>
-          <input name="firstName" type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" [(ngModel)]="newUser.first_name">
+          <input name="firstName" type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" formControlName="firstName">
         </div>
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" [(ngModel)]="newUser.last_name">
+          <input name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" formControlName="lastName">
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" [(ngModel)]="newUser.email">
+          <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+          <p class="error" *ngIf="formGroup.get('email').getError('email')">
+            Yo, thats not an email
+          </p>
         </div>
         <div class="form-group">
           <label for="nickname">Nickname</label>
-          <input name="nickname" type="text" class="form-control" id="nickname" aria-describedby="nicknameHelp" [(ngModel)]="newUser.nickname">
+          <input name="nickname" type="text" class="form-control" id="nickname" aria-describedby="nicknameHelp" formControlName="nickname">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input name="password" type="password" class="form-control" id="password" aria-describedby="password" [(ngModel)]="newUser.password">
+          <input name="password" type="password" class="form-control" id="password" aria-describedby="password" formControlName="password">
         </div>
         <div class="form-group">
           <label for="passwordConfirmation">Password Confirmation</label>
-          <input name="passwordConfirmation" type="password" class="form-control" id="passwordConfirmation" aria-describedby="passwordConfirmation" [(ngModel)]="newUser.password_confirmation">
+          <input name="passwordConfirmation" type="password" class="form-control" id="passwordConfirmation" aria-describedby="passwordConfirmation" formControlName="passwordConfirmation">
         </div>
-        <button type="button" class="btn btn-primary" (click)="submitUser()">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="submitUser()" [disabled]="!formGroup.valid">Submit</button>
       </form>
     </div>
   </div>
