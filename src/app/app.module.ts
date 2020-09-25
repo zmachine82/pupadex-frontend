@@ -1,4 +1,4 @@
-import { AuthInterceptor } from './auth.interceptor';
+  import { AuthInterceptor } from './auth.interceptor';
 import { DogprofileComponent } from './dogprofile/DogprofileComponent';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PuppylistComponent } from './puppylist/puppylist.component';
 import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AddPuppyComponent } from './add-puppy/add-puppy.component';
 import { NewReviewComponent } from './new-review/new-review.component';
@@ -38,7 +38,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent]
