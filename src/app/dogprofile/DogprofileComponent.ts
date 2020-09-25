@@ -14,7 +14,7 @@ export class DogprofileComponent implements OnInit {
     puppy: Puppy = null;
     reviews: Review[] = [];
     averageRating: number = null;
-    constructor(private route: ActivatedRoute, private puppyService: PuppyService, private localStorageService: LocalStorageService ) {
+    constructor(private route: ActivatedRoute, private puppyService: PuppyService, private localStorageService: LocalStorageService) {
 
     }
 
@@ -22,13 +22,12 @@ export class DogprofileComponent implements OnInit {
         this.route.params.subscribe(params => {
             if (params.id) {
                 this.puppyService.getAPuppy(params.id).subscribe(puppyData => {
-                    console.log(puppyData);
                     this.puppy = puppyData.puppy
                     this.reviews = puppyData.reviews
                     this.averageRating = puppyData.averageRating
                 });
             }
-        })
+        });
     }
 
     loggedIn() {

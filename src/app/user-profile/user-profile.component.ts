@@ -41,7 +41,6 @@ export class UserProfileComponent implements OnInit {
     this.userService.updateUser(this.currentUser).subscribe(data => {
       this.localStorageService.saveUser(data);
     })
-    this.editingNickname = false;
     popup.close()
   }
 

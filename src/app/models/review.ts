@@ -1,6 +1,7 @@
-export class Review {
+    export class Review {
     id: number;
     body: string;
     username: string;
-    rating: number
+    rating: number;
+    created_at: string;
 }
