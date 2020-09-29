@@ -9,8 +9,11 @@
 
       </div>
       <div class="links" *ngIf="!signedIn">
-        <span [routerLink]="['/sign-up']">Sign Up</span>
+        <span [routerLink]="['/sign-up']" >Sign Up</span>
         <span [routerLink]="['/sign-in']" >Sign In</span>
+        <span (click)="signInModal = true">Sign In-modal</span>
+        <app-form-modal [(openModal)]="signInModal" [data]="signInModalData" (saved)="modalSaved($event)"></app-form-modal>
+
       </div>
     </div>
 

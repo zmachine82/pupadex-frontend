@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PuppylistComponent implements OnInit {
 
   puppies: Puppy[] = [ ]
-  constructor(private puppyService: PuppyService, private router: Router, private localStorageService: LocalStorageService) { }
+  constructor(private puppyService: PuppyService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
     this.puppyService.getAllPuppies().subscribe(data => {
@@ -20,9 +20,6 @@ export class PuppylistComponent implements OnInit {
     })
   }
 
-  profile(puppy: Puppy) {
-    this.router.navigate(['dogprofile', puppy.id])
-  }
 
   loggedIn() {
     return this.localStorageService.isLoggedIn();

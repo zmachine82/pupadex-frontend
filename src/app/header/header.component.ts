@@ -1,3 +1,4 @@
+import { FormModalOption } from './../models/FormModalOption';
 import { LocalStorageService } from './../local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -13,6 +14,9 @@ export class HeaderComponent implements OnInit {
   nickname = '';
   closeResult = '';
 
+  signInModal = false;
+  signInModalData: FormModalOption[] = [{label: "first input", type: 'text', required: true}, {label: "wow", type: 'radio', required: false}]
+
   constructor(private modalService: NgbModal, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
@@ -24,6 +28,11 @@ export class HeaderComponent implements OnInit {
         this.signedIn = false;
       }
     });
+  }
+
+  modalSaved(event) {
+    console.log(event);
+    console.log('wow it is saved')
   }
 
   open(content) {

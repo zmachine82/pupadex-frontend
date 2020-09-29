@@ -18,6 +18,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { AddPuppyComponent } from './add-puppy/add-puppy.component';
 import { NewReviewComponent } from './new-review/new-review.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PuppylistCardComponent } from './puppylist-card/puppylist-card.component';
+import { FormModalComponent } from './form-modal/form-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SignInComponent,
     AddPuppyComponent,
     NewReviewComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    PuppylistCardComponent,
+    FormModalComponent
   ],
   imports: [
     CommonModule,

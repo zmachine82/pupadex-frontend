@@ -1,30 +1,4 @@
-@import './../../variables.scss';
 
-
-.card {
-  font-family: 'helvetica, sans-serif';
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-
-  .card-body {
-    background: $pokedex-blue;
-  }
-
-  .card-title {
-    font-family: 'helvetica, sans-serif';
-    color: white;
-    
-  }
-
-  img {
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-  }
-}
-
-.card:hover {
-  cursor: pointer;
-}
 
 .button-row {
   margin-top: 16px;
@@ -36,8 +10,3 @@
   }
 }
 
-.sizing {
-    height: 286px;
-    display: block;
-    object-fit: cover;
-}
