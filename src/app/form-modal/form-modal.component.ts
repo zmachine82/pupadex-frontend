@@ -1,5 +1,5 @@
 import { FormModalOption } from './../models/FormModalOption';
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, TemplateRef, ViewChild, ViewChildren } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,7 +8,7 @@ import { ModalDismissReasons, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-boo
   templateUrl: './form-modal.component.html',
   styleUrls: ['./form-modal.component.scss']
 })
-export class FormModalComponent implements OnInit, OnChanges {
+export class FormModalComponent implements OnInit, OnChanges, AfterViewChecked {
 
   @Input() data: FormModalOption[] = [];
   @Input() openModal: boolean = false;
@@ -17,19 +17,22 @@ export class FormModalComponent implements OnInit, OnChanges {
 
   currentModal: NgbModalRef;
 
-  @ViewChild('content') content: ElementRef;
+  @ViewChild('content') content: TemplateRef<any>;
 
   closeResult = '';
 
   form: FormGroup = new FormGroup({});
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private renderer:Renderer2) { }
+  ngAfterViewChecked(): void {
+  
+  }
 
   ngOnInit(): void {
     this.modalService.activeInstances.subscribe((list) => {
       this.currentModal = list[0]
     });
-  }
+  } 
 
   ngOnChanges() {
     if (this.openModal) {
@@ -37,8 +40,28 @@ export class FormModalComponent implements OnInit, OnChanges {
       this.form = new FormGroup({});
       this.data.forEach(element => {
         this.form.addControl(element.label, new FormControl(''))
+        const label = this.renderer.createElement("label");
+        label.innerText = element.label
+
+        const input = this.renderer.createElement("input");
+    
+        if (element.type) {
+          input.type = element.type;
+        } else {
+          input.type = "text"
+        }
+        input.name = "input" + element.label;
+        this.renderer.setAttribute(input, 'formControlName', element.label);
+       
         if(element.required) {
           this.form.get(element.label).setValidators( Validators.required)
+        }
+
+        if(this.content) {
+
+          // this.renderer.appendChild(this.inputContainer, label)
+          // this.renderer.appendChild(this.inputContainer, input)
+          // this.renderer.listen
         }
       });
     }
@@ -69,7 +92,12 @@ export class FormModalComponent implements OnInit, OnChanges {
   // }
 
   open() {
-    this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    const ref = this.modalService.open(this.content, {ariaLabelledBy: 'modal-basic-title'})
+    // console.log(this.content.)
+    // console.log("primaryColorSample:", this.inputContainer);
+    // console.log("primaryColorSample:", this.template);
+
+    ref.result.then((result) => {
       console.log(`Closed with: ${result}`);
       this.openModalChange.emit(false);
       this.saved.emit(this.form.value);
@@ -78,7 +106,6 @@ export class FormModalComponent implements OnInit, OnChanges {
       this.openModalChange.emit(false);
     });
   }
-
   cancel() {
     this.currentModal.dismiss(" cancelled")
   }
@@ -96,15 +123,6 @@ export class FormModalComponent implements OnInit, OnChanges {
       return `with: ${reason}`;
     }
   }
-
-  // Input - [{label:, type: }]
-  // Build out an object to pass around
-
-  // dynamically build our html based on the input
-
-  // trigger some output when the save is called
-
-  // save and cancel UI interface
 
 }
   

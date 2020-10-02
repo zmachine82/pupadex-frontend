@@ -30,6 +30,14 @@
         [popoverTitle]="nicknameTitle" [autoClose]="false">
         Change Nickname
       </button>
+
+      <div class="puppies" *ngIf="currentUser.favoritePuppies.length > 0">
+          <h5>Favorite Pups</h5>
+          
+          <a href="/dogprofile/{{pup.id}}" *ngFor="let pup of currentUser.favoritePuppies">
+            <p >{{pup.name}}</p>
+          </a>
+      </div>
     </div> 
 
   

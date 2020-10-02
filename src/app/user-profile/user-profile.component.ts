@@ -18,6 +18,10 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.localStorageService.currentUser.subscribe(data => {
+
+      this.userService.profile().subscribe(user => {
+        this.currentUser = user;
+      })
   
       if (data) {
         this.currentUser = data;

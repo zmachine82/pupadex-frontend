@@ -1,11 +1,11 @@
 
 <ng-template #content let-modal>
     <div class="container">
-        <div class="input-container" [formGroup]="form">
-            <div *ngFor="let input of data">
+        <div #inputcontainer [formGroup]="form">
+            <!-- <div *ngFor="let input of data">
                 <label >{{input.label}}</label>
                 <input [type]="input.type" [formControlName]="input.label">
-            </div>
+            </div> -->
             
         </div>
 

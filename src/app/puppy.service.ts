@@ -31,4 +31,8 @@ export class PuppyService {
   addPuppy(puppy: Puppy) {
     return this.http.post(this.baseUrl + 'puppies/create', puppy);
   }
+
+  toggleFavoriteOnPuppy(puppy: Puppy) {
+    return this.http.post(this.baseUrl + 'puppies/favorite', {puppy_id: puppy.id, user_id: this.localStorageService.currentUser.value.id})
+  }
 }

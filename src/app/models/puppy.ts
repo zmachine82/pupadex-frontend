@@ -4,4 +4,5 @@ export class Puppy{
     age: number;
     breed: string;
     image: string;
+    favorite: boolean;
 }
